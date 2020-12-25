@@ -1,0 +1,8 @@
+{
+  "name": "hxRtAudio",
+  "license": "BSD",
+  "releasenote": "",
+  "contributors": ["andyli"],
+  "version": "4.0.11",
+  "classPath": "src"
+}
