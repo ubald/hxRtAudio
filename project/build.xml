@@ -29,9 +29,9 @@
 		<compilerflag value = "-D__UNIX_JACK__" if="macos"/>
 		<compilerflag value = "-I/usr/local/Cellar/jack/1.9.7/include" if="macos"/>
 		 -->
-		<compilerflag value = "-D__LINUX_OSS__" if="linux"/>
-		<compilerflag value = "-D__LINUX_ALSA__" if="linux"/>
-		<compilerflag value = "-D__UNIX_JACK__" if="linux"/>
+		<compilerflag value = "-D__LINUX_OSS__" if="linux" unless="rpi"/>
+		<compilerflag value = "-D__LINUX_ALSA__" if="linux" unless="rpi"/>
+		<compilerflag value = "-D__UNIX_JACK__" if="linux" unless="rpi"/>
 	</files>
 	
 	<target id="hxRtAudio.ndll" tool="linker" toolid="dll" output="hxRtAudio">
@@ -61,8 +61,8 @@
 		<vflag name="-framework" value="CoreFoundation" if="macos"/>
 		
 		<lib name="-lpthread" if="linux"/>
-		<lib name="-lasound" if="linux"/>
-		<lib name="-ljack" if="linux"/>
+		<lib name="-lasound" if="linux" unless="rpi"/>
+		<lib name="-ljack" if="linux" unless="rpi"/>
 	</target>
 
 	<target id="default">
