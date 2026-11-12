@@ -8,3 +8,5 @@ doc
 tmp
 
 .DS_Store
+# Built locally with haxelib run hxcpp build.xml
+ndll/

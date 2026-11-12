@@ -29,7 +29,7 @@
 		<compilerflag value = "-D__UNIX_JACK__" if="macos"/>
 		<compilerflag value = "-I/usr/local/Cellar/jack/1.9.7/include" if="macos"/>
 		 -->
-		<compilerflag value = "-D__LINUX_OSS__" if="linux" unless="rpi"/>
+		<!-- OSS is obsolete on Linux, and its bundled soundcard.h needs the BSD-only machine/endian.h -->
 		<compilerflag value = "-D__LINUX_ALSA__" if="linux" unless="rpi"/>
 		<compilerflag value = "-D__UNIX_JACK__" if="linux" unless="rpi"/>
 	</files>

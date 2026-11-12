@@ -29,6 +29,8 @@
 #define IMPLEMENT_API
 #include <hx/CFFI.h>
 #include <hx/Thread.h>
+// hxcpp 4 renamed MySemaphore to HxSemaphore
+typedef HxSemaphore MySemaphore;
 
 #include <vector>
 #include "RtAudio.h"
