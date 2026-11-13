@@ -29,7 +29,11 @@ package rtAudio;
 
 #if cpp
 import cpp.Lib;
+#if (haxe_ver >= 4)
+import sys.thread.Thread;
+#else
 import cpp.vm.Thread;
+#end
 #else
 import neko.Lib;
 import neko.vm.Thread;
